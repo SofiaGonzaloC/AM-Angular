@@ -1,1 +1,100 @@
-<p>form works!</p>
+<div class="container py-5 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-lg-8 col-xl-6">
+      <div class="card rounded-3">
+        <div class="card-body p-4 p-md-5">
+          <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Register</h3>
+
+          <div class="alert alert-secondary" *ngIf="loading" role="alert">
+            Loading ...
+          </div>
+
+          <form class="px-md-2" [formGroup]="form" (submit)="saveUser()">
+            <div class="row">
+              <div class="col-lg-6 col-md-12">
+                <div class="form-outline mb-4">
+                  <input
+                    type="text"
+                    id="name"
+                    formControlName="name"
+                    class="form-control"
+                    required
+                  />
+                  <label class="form-label" for="name">Name</label>
+                </div>
+              </div>
+
+              <div class="col-lg-6 col-md-12">
+                <div class="form-outline mb-4">
+                  <input
+                    type="date"
+                    id="birthdate"
+                    formControlName="birthdate"
+                    class="form-control"
+                    required
+                  />
+                  <label class="form-label" for="birthdate">Birthdate</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-outline mb-4">
+                  <input
+                    type="email"
+                    id="email"
+                    formControlName="email"
+                    class="form-control"
+                    required
+                  />
+                  <label class="form-label" for="birthdate">Email</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-8">
+                <div class="form-outline mb-4">
+                  <input
+                    type="tel"
+                    id="phone"
+                    formControlName="phone"
+                    class="form-control"
+                    required
+                  />
+                  <label class="form-label" for="phone">Phone</label>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-outline mb-4">
+                  <input
+                    type="tel"
+                    id="phoneExtension"
+                    formControlName="phoneExtension"
+                    class="form-control"
+                    required
+                  />
+                  <label class="form-label" for="phoneExtension"
+                    >Extension</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="form-outline mb-4">
+              <div class="form-control">
+                <canvas #signaturePad></canvas>
+              </div>
+              <label class="form-label">Signature</label>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-lg mb-1">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
