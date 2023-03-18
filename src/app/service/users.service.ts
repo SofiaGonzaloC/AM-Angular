@@ -2,7 +2,15 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { ConfigurationService } from './configuration.service';
-import { User } from '../interfaces/User';
+// import { User } from '../interfaces/User';
+
+interface User {
+  name: string,
+  birthdate: string,
+  email: string,
+  phone: string,
+  signature: string
+}
 
 @Injectable({
   providedIn: 'root'

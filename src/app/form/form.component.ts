@@ -2,8 +2,16 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import SignaturePad from 'signature_pad';
 
-import { User } from '../interfaces/User';
+// import { User } from '../interfaces/User';
 import { UsersService } from '../service/users.service';
+
+interface User {
+  name: string,
+  birthdate: string,
+  email: string,
+  phone: string,
+  signature: string
+}
 
 @Component({
   selector: 'app-form',
